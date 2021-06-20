@@ -87,6 +87,7 @@ html{
     top: 0;
     z-index: 1;
 }
+
 .clear{
     clear: both;
 }
@@ -95,6 +96,7 @@ html{
 }
 #nav{
     display: inline-block;
+    text-transform: uppercase !important;
 }
 
 #nav li{ 
@@ -105,7 +107,6 @@ html{
 
 #nav > li > a{
     color: white;
-    text-transform: uppercase;
 }
 #nav li a{
     text-align: center;
@@ -117,8 +118,10 @@ html{
 }
 #nav .subnav li:hover,
 #nav > li:hover > a{
-    color: #000 !important ;
-    background-color: #ccc !important;
+    color: #000;
+    background-color: #ccc;
+    display: block;
+    text-align: left;
 }
 
 #nav .subnav{
@@ -147,6 +150,7 @@ html{
 #nav .nav-arrow-down{
     font-size: 14px;
 }
+#header .view-list,
 #header .nav-search{
     float: right;
 }
@@ -154,6 +158,13 @@ html{
     cursor: pointer;
     background-color: rgb(250, 71, 71);
 }
+
+#header .view-list:hover{
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+    color: #000;
+}
+#header .view-list,
 #header .search-icon{
     line-height: 46px;
     padding: 0 21px;
@@ -161,12 +172,13 @@ html{
 }
 /* SLIDER */
 #slider{
-    position: relative;
+    position: relative; 
     margin-top: 46px;
     min-height: 500px;
     background-color: #333;
     padding-top: 50%;
-    background: url('/assets/img/img2.jpg')top center / cover no-repeat ;
+    background: url('../img/img7.jpg')top center / cover no-repeat;
+    width: 100%;
 }
 
 #slider .contrain{
@@ -177,16 +189,18 @@ html{
     transform:translateX(-50%) ;
     color: white;
     text-align: center;
-    
+    width: 100%;
+    text-shadow: 0 0 2px #000;
 }
 #slider .text-heading{
+    text-align: center;
     font-size: 25px;
     margin-bottom: 25px;
 }
 
 #slider .text-description{
     font-style: italic;
-    font-size: 15px;
+    font-size: 16px;
 }
 /* BEGIN CONTENT */
 #content{
@@ -194,7 +208,7 @@ html{
 
 }
 #content .content-section{
-    width: 800px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 64px 0px 112px;
@@ -242,6 +256,7 @@ html{
 }
 .tickets-list{
     background-color: #fff;
+    width: 100%;
     margin-top: 40px;
 }
 
@@ -339,8 +354,10 @@ html{
 
 /* Map section */
 
-.map-section img{
+.map-section .map {
     width:100%;
+    min-height: 400px;
+    max-width: 100%;
 }
 
 /* END CONTENT */
@@ -355,7 +372,7 @@ html{
 
 #footer .socials a{
     text-decoration: none;
-    color: #000;
+    color: #000000;
     opacity: 0.6;
 }
 
@@ -377,4 +394,206 @@ html{
 
 #footer .copyright a:hover{
     opacity: 0.7;
+}
+
+/* TABLET & MOBILE: width >= 740px and width<=1024px */
+
+.view-list{
+    display: none;
+    line-height: 46px;
+}
+
+.nav__overlay{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+/* #nav_mobile{
+    padding: 30px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    width: 320px;
+    max-width: 100%;
+    text-transform: uppercase !important;
+    transform: translateX(-100%);
+    display: inline-block;
+    z-index: 1;
+    opacity: 0;
+    transition: transform linear 0.2s, opacity linear 0.2s;
+
+} */
+
+/* #nav_mobile li{
+    border-bottom: rgba(0, 0, 0, 0.5);
+    background-color: whitesmoke;
+    margin: 5px 0px;
+} */
+
+/* .nav_mobile-item{
+    text-decoration: double;
+    display: block;
+    font-size: 20px;
+    padding: 8px 0px;
+    color: #000;
+    margin-left:20px;
+} */
+
+.btn-icon_close{
+    color: #000;
+    font-size: 24px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+/* .btn-input:checked ~ .nav__overlay{
+    display: block;
+}
+
+.btn-input:checked ~ #nav_mobile{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.btn-input:checked ~ .btn-icon_close{
+    transform: translateX(-100%);
+} */
+
+
+@media only screen and (max-width: 63.9375em)  {
+    /* .view-list{
+        display: inline-block;
+        line-height: 46px;
+        height: 100%;
+        font-size: 24px;
+        margin-left: 8px;
+    } */    
+}
+.team-list_2{
+    top: 10px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+/* MOBILE: width < 740px */
+
+@media only screen and (max-width: 46.1285em) {
+    #header{
+    overflow: hidden;
+    }
+    #nav{
+        display: block;
+        position: relative;
+    }
+
+    #nav li { 
+        display: block;
+    }
+
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    #nav .subnav{
+        font-size: 14px;
+        min-width: 130px;
+        border-radius: 2px;
+        position: initial;
+        background-color: #333;
+        padding: 5px 41px;
+    }
+    #nav .subnav a{
+        color: #fff;
+    }
+
+    .nav-search{
+        display: none;
+    }
+
+    .view-list{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .content-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .team-list_1{
+        margin: auto;
+    }
+    .team-list_2{
+        top: 10px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .team-list_2 > .col-third{
+        width: 100%;
+        flex-basis: 100%;
+        margin-top: 30px;
+    }
+
+    .tour-places{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tour-places > .col-third{
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .contact-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .contact-body  .col-half{
+        margin-top: 8px;
+        width: 100%;
+    }
+    .contact-info a{
+        opacity: 0.7;
+        display: inline-block;
+        font-size: 15px;
+    }
+
+    .contact-info a:hover{
+        opacity: 1;
+    }
+
+    .btn{
+            width: 100%;
+            text-align: center;
+    }
+}
+/* tablet: width>=1024px */
+
+@media only screen and (min-width: 46.25em) and (max-width: 64em) {
+    
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
